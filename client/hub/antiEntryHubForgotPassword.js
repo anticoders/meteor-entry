@@ -1,0 +1,4 @@
+Template.antiEntryHubForgotPassword.events({
+
+});
+

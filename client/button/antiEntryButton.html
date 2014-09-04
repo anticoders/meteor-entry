@@ -1,0 +1,12 @@
+<template name="antiEntryButton">
+  <div class="anti-entry-button-group">
+    {{#if currentUser}}
+      <button class="__profile">{{currentUser.username}}</button>
+      <button class="__logout">Log out</button>
+    {{else}}
+      <button class="__login">Log in</button>
+      <button class="__signup">Sign up</button>
+    {{/if}}
+  </div>
+</template>
+

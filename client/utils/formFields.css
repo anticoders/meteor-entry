@@ -1,0 +1,72 @@
+.anti-entry-line {
+  margin-bottom: 10px;
+}
+
+.anti-entry-label {
+  font-size: 12px;
+  color: #666;
+  display: inline-block;
+  width: 50px;
+  margin-right: 5px;
+}
+
+div.anti-entry-field {
+  display: inline-block;
+  width: 200px;
+}
+
+input[type=text].anti-entry-field,
+input[type=password].anti-entry-field {
+  background: #ffffff;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0px 6px;
+  color: #333;
+  margin: 0px;
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: -1px -1px 3px rgba(0,0,0,0.125) inset;
+}
+
+
+.anti-entry-button {
+  width: 100%;
+  height: 36px;
+  line-height: 32px;
+  padding: 0px 0px 4px 0px;
+  font-size: 16px;
+
+  background: #69f;
+  color: #f0f0f0;
+  border: 0px;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  box-shadow: 0px -4px 0px 0px rgba(0,0,0,0.25) inset;
+
+  -webkit-transition: all 100ms;
+  -moz-transition: all 100ms;
+  -o-transition: all 100ms;
+  transition: all 100ms;
+}
+
+.anti-entry-button:hover {
+  margin-top: 3px;
+  padding: 0px 0px 1px 0px;
+  height: 33px;
+  box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.25) inset;
+}
+
+.anti-entry-link {
+  width: 100%;
+  color: #039;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+
+
+

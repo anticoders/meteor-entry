@@ -1,0 +1,26 @@
+
+<template name="antiEntryHub">
+
+
+  <div class="anti-modal-box anti-modal-box-narrow">
+    <div class="anti-modal-header">
+      <span class="anti-modal-title">
+        {{#if modeIs 'logIn'}} Log In {{/if}}
+        {{#if modeIs 'signUp'}} Sign Up {{/if}}
+        {{#if modeIs 'forgotPassword'}} Forgot password {{/if}}
+        {{#if modeIs 'requestInvitation'}} Request invitation {{/if}}
+        {{#if modeIs 'receiveInvitation'}} Receive invitation {{/if}}
+      </span>
+      <span class="anti-modal-closer">&times;</span>
+    </div>
+
+    <div class="anti-modal-body">
+      {{#if modeIs 'logIn'}} {{> antiEntryHubLogIn}} {{/if}}
+      {{#if modeIs 'signUp'}} {{> antiEntryHubSignUp}} {{/if}}
+      {{#if modeIs 'forgotPassword'}} {{> antiEntryHubForgotPassword}} {{/if}}
+      {{#if modeIs 'requestInvitation'}} {{> antiEntryHubRequestInvitation}} {{/if}}
+    </div>
+
+  </div>
+</template>
+
