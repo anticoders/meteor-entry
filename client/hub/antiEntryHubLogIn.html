@@ -1,8 +1,6 @@
 <template name="antiEntryHubLogIn">
   <form>
-    {{#if messages}}{{#each messages}}
-      <div>{{this}}</div>
-    {{/each}}{{/if}}
+    {{> __antiEntry__fMessage   message=message}}
     {{> __antiEntry__fText      name="email"      label="Email"     placeholder="Email"}}
     {{> __antiEntry__fPassword  name="password"   label="Password"  placeholder="Password"}}
     {{> __antiEntry__fSubmit    label="Log in"}}

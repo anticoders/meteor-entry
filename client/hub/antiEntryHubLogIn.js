@@ -1,11 +1,11 @@
-var data = new ReactiveDict();
+var dict = new ReactiveDict();
 
 Template.antiEntryHubLogIn.rendered = function() {
-  data.set('message', false);
+  dict.set('message', false);
 };
 
-Template.antiEntryHubLogIn.messages = function() {
-  return data.get('messages');
+Template.antiEntryHubLogIn.message = function() {
+  return dict.get('message');
 };
 
 
@@ -16,11 +16,14 @@ Template.antiEntryHubLogIn.events({
     var data = Form.toJSON($(e.currentTarget));
 
     Meteor.loginWithPassword(data.email, data.password, function(error) {
+      console.log("LWP", error);
       if (error) {
         if(error.reason === 'Incorrect password' || error.reason === 'User not found') {
-          data.set('messages', ['Incorrect email or password.']);
+          dict.set('message', 'Incorrect email or password.');
+        } else if(error.error === 1024) {
+          dict.set('message', 'You need to verify your email first.');
         } else {
-          data.set('messages', ['Could not log in.', error.reason]);
+          dict.set('message', 'Could not log in. \n' + error.reason);
         }
       } else {
         AntiModals.dismissOverlay(e.currentTarget);

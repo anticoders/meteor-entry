@@ -4,6 +4,7 @@ var data = new ReactiveDict();
 
 
 Template.antiEntryHub.rendered = function() {
+  console.log("AEH", this.data);
   data.set('mode', this.data.mode);
 };
 

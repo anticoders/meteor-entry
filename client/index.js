@@ -1,4 +1,3 @@
-AntiEntry = AntiEntry || {};
 
 _.extend(AntiEntry, {
 

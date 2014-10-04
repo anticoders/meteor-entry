@@ -7,11 +7,12 @@ Package.describe({
 });
 
 Package.onUse(function (api, where) {
-  api.versionsFrom('0.9.0');
+  api.versionsFrom('0.9.1');
   
   api.use([
     'accounts-password',
     'deps',
+    'reactive-var',
     'reactive-dict',
     'spacebars',
     'templating',
@@ -19,10 +20,14 @@ Package.onUse(function (api, where) {
     'underscore',
   ], ['client', 'server']);
 
-  api.use(['anti:modals@0.2.2'], 'client');
+  api.use(['anti:modals@0.3.0'], 'client');
   api.imply(['anti:modals'], 'client');
 
-  api.export('AntiEntry', 'client');
+  api.export('AntiEntry', ['client', 'server']);
+
+  api.addFiles([
+    'both/index.js',
+  ], ['client', 'server']);
 
   api.addFiles([
     'client/index.js',
@@ -53,6 +58,12 @@ Package.onUse(function (api, where) {
     'client/modals/antiEntryModalReceiveInvitation.js',
 
   ], 'client');
+
+
+  api.addFiles([
+    'server/config.js',
+    
+  ], 'server');
 
 });
 
