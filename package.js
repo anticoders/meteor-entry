@@ -28,6 +28,7 @@ Package.onUse(function (api, where) {
 
   api.addFiles([
     'both/index.js',
+    'both/config.js',
     'both/routes.js',
   ], ['client', 'server']);
 

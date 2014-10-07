@@ -19,16 +19,8 @@
 
 */
 
-var settings = {};
 
+AntiEntry._config = function(settings) {  
 
-AntiEntry.config = function(options) {
-  if(settings.initialized) {
-    throw new Error('AntiEntry.config() can be only called once!');
-  }
-  settings.initialized = true;
-
-
-  AntiEntry._initRoutes(settings);
 };
 
