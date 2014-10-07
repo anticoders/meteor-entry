@@ -69,6 +69,3 @@ _.extend(AntiEntry, {
 
 
 
-
-
-

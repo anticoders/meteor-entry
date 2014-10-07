@@ -2,7 +2,7 @@
 Package.describe({
   summary:  "Advanced entry modals",
   name:     "anti:entry",
-  version:  "0.1.0",
+  version:  "0.1.1",
   git:      "https://github.com/anticoders/meteor-entry.git",
 });
 
@@ -18,6 +18,7 @@ Package.onUse(function (api, where) {
     'templating',
     'ui',
     'underscore',
+    'iron:router'
   ], ['client', 'server']);
 
   api.use(['anti:modals@0.3.0'], 'client');
@@ -27,10 +28,12 @@ Package.onUse(function (api, where) {
 
   api.addFiles([
     'both/index.js',
+    'both/routes.js',
   ], ['client', 'server']);
 
   api.addFiles([
     'client/index.js',
+    'client/config.js',
 
     'client/utils/form.js',
     'client/utils/formFields.html',
