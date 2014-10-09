@@ -1,0 +1,23 @@
+<template name="antiEntryProfile">
+
+  <div class="anti-modal-box anti-modal-box-narrow">
+    <div class="anti-modal-header">
+      <span class="anti-modal-title">
+        {{#if modeIs 'show'}} Profile {{/if}}
+        {{#if modeIs 'password'}} Edit profile password {{/if}}
+      </span>
+      <span class="anti-modal-closer">&times;</span>
+    </div>
+
+    <div class="anti-modal-body">
+      <div class="anti-modal-tabs">
+        <button class="__mode" data-mode="show">Profile</button>
+        <button class="__mode" data-mode="password">Password</button>
+      </div>
+      {{#if modeIs 'show'}} {{> antiEntryProfileShow}} {{/if}}
+      {{#if modeIs 'password'}} {{> antiEntryProfilePassword}} {{/if}}
+    </div>
+
+  </div>
+</template>
+

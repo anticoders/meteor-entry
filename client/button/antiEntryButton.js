@@ -13,7 +13,7 @@ Template.antiEntryButton.events({
   },
 
   'click .__profile': function(e, t) {
-
+    AntiEntry.profile();
   },
 
 });

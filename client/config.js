@@ -8,6 +8,8 @@
     receiveInvitation   (/entry/)
     changeEmail
     changePassword
+    profileShow
+    profilePassword
   }
   messages: {
     loggedIn:

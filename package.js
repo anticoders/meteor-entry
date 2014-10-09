@@ -60,6 +60,13 @@ Package.onUse(function (api, where) {
     'client/modals/antiEntryModalChangePassword.js',
     'client/modals/antiEntryModalReceiveInvitation.html',
     'client/modals/antiEntryModalReceiveInvitation.js',
+    
+    'client/profile/antiEntryProfile.html',
+    'client/profile/antiEntryProfile.js',
+    'client/profile/antiEntryProfilePassword.html',
+    'client/profile/antiEntryProfilePassword.js',
+    'client/profile/antiEntryProfileShow.html',
+    'client/profile/antiEntryProfileShow.js',
 
   ], 'client');
 

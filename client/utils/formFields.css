@@ -78,6 +78,13 @@ input[type=password].anti-entry-field {
   cursor: pointer;
 }
 
+div.anti-entry-tabs {
+  width: 100%;
+}
 
+.anti-modal-detail {
+  width: 100%;
+  display: block;
+}
 
 

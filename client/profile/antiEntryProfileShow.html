@@ -1,0 +1,14 @@
+<template name="antiEntryProfileShow">
+  <div class="anti-modal-details">
+    <span class="anti-modal-detail">
+      Username: {{currentUser.username}}
+    </span>
+    <span class="anti-modal-detail">
+      E-mails: 
+      {{#each currentUser.emails}}
+        <div>{{address}}</div>
+      {{/each}}
+    </span>
+  </div>
+</template>
+

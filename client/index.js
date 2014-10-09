@@ -62,9 +62,20 @@ _.extend(AntiEntry, {
   confirmPasswordChange: function() {
 
   },
-
-
-
+  
+  profile: function() {
+    AntiModals.overlay('antiEntryProfile', {data:{
+      mode: 'show',
+    }});
+  },
+  
+  profilePassword: function() {
+    AntiModals.overlay('antiEntryProfile', {data:{
+      mode: 'profile',
+    }});
+  },
+  
+  
 });
 
 

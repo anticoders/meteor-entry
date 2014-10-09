@@ -25,6 +25,7 @@ AntiEntry.config = function(params) {
     logoutPath:             '/entry/logout',
     forgotPasswordPath:     '/entry/forgot',
     requestInvitationPath:  '/entry/request',
+    
   }, params);
 
   settings.initialized = true;
