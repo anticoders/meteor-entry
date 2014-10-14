@@ -13,7 +13,6 @@ Template.antiEntryProfile.helpers({
   modeIs: function(value) {
     return data.get('mode') === value;
   },
-
 });
 
 Template.antiEntryProfile.events({

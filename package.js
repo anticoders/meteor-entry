@@ -18,7 +18,7 @@ Package.onUse(function (api, where) {
     'templating',
     'ui',
     'underscore',
-    'iron:router'
+    'iron:router',
   ], ['client', 'server']);
 
   api.use(['anti:modals@0.3.0'], 'client');
@@ -35,7 +35,10 @@ Package.onUse(function (api, where) {
   api.addFiles([
     'client/index.js',
     'client/config.js',
-
+    
+    'client/app/helpers/_helpers.js',
+    'client/app/helpers/gravatar.js',
+    
     'client/utils/form.js',
     'client/utils/formFields.html',
     'client/utils/formFields.css',
