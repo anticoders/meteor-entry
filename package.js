@@ -18,7 +18,7 @@ Package.onUse(function (api, where) {
     'templating',
     'ui',
     'underscore',
-    'iron:router'
+    'iron:router@0.9.4'
   ], ['client', 'server']);
 
   api.use(['anti:modals@0.3.0'], 'client');
