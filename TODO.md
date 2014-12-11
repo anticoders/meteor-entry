@@ -1,3 +1,5 @@
+- Confirm after verifying email / loggin in
+- Get rid of the hub, use only simple modals
 - Create simple 'settings.get()' methods.
 - Add settings for Welcome / Forgot password email titles and templates.
 - Do not include 'username' in email templates if username not required in app.

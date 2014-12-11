@@ -2,12 +2,12 @@
 Package.describe({
   summary:  "Advanced entry modals",
   name:     "anti:entry",
-  version:  "0.1.1",
+  version:  "0.5.0",
   git:      "https://github.com/anticoders/meteor-entry.git",
 });
 
 Package.onUse(function (api, where) {
-  api.versionsFrom('0.9.1');
+  api.versionsFrom('1.0.1');
   
   api.use([
     'accounts-password',
@@ -18,7 +18,7 @@ Package.onUse(function (api, where) {
     'templating',
     'ui',
     'underscore',
-    'iron:router@1.0.0'
+    'iron:router@1.0.3'
   ], ['client', 'server']);
 
   api.use(['anti:modals@0.4.0'], 'client');
