@@ -6,31 +6,61 @@ AntiEntry.config = function(params) {
     throw new Error('AntiEntry.config() can be only called once!');
   }
 
-  _.extend(settings, {
-    appname:                Meteor.absoluteUrl(''),
+  if(settings.initializedOnce) {
+    _.extend(settings, params);
+  } else {
+    _.extend(settings, {
+      appname:                Meteor.absoluteUrl(''),
 
-    verifyEmail:            true,
-    requireInvitation:      false,
-    registerCode:           false,
+      verifyEmail:            true,
+      requireInvitation:      false,
+      registrationCode:       false,
 
-    restorePasswordPath:    '/entry/restore/:token',
-    verifyEmailPath:        '/entry/verify/:token',
-    invitationPath:         '/entry/invitation/:token',
+      restorePasswordPath:    '/entry/restore/:token',
+      verifyEmailPath:        '/entry/verify/:token',
+      invitationPath:         '/entry/invitation/:token',
 
-    postVerifyEmailPath:    '/',
+      postVerifyEmailPath:    '/',
+      postLogOutPath:         '/',
 
-    entryPath:              '/entry',
-    logInPath:              '/entry/login',
-    signUpPath:             '/entry/signup',
-    logoutPath:             '/entry/logout',
-    forgotPasswordPath:     '/entry/forgot',
-    requestInvitationPath:  '/entry/request',
-  }, params);
+      logInTemplate:              'antiEntryHubLogIn',
+      signUpTemplate:             'antiEntryHubSignUp',
+      forgotPasswordTemplate:     'antiEntryHubForgotPassword',
+      requestInvitationTemplate:  'antiEntryHubRequestInvitation',
+
+      entryPath:                  '/entry',
+      logInPath:                  '/entry/login',
+      signUpPath:                 '/entry/signup',
+      logOutPath:                 '/entry/logout',
+      forgotPasswordPath:         '/entry/forgot',
+      requestInvitationPath:      '/entry/request',
+    }, params);
+  }
 
   settings.initialized = true;
 
+  if(Meteor.isServer && settings.serverSideConfig) {
+    if(!settings.initializedOnce) {
+      settings.initializedOnce = true;
+      settings.initialized = false;
+      return;
+    }
+  }
+
+  // console.log("CONF", settings.initializedOnce, settings.verifyEmail);
+
+
+
   AntiEntry._initRoutes(settings);  
-  AntiEntry._config(settings);
+
+  if(Meteor.isClient) {
+    AntiEntry._configClient(settings);
+  }
+
+  if(Meteor.isServer) {
+    AntiEntry._configServer(settings);
+  }
+  
 };
 
 

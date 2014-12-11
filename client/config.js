@@ -20,7 +20,18 @@
 */
 
 
-AntiEntry._config = function(settings) {  
+AntiEntry._configClient = function(settings) {
+
+  Template.registerHelper('antiEntry', function() {
+    return {
+      template: {
+        logIn: settings.logInTemplate,
+        signUp: settings.signUpTemplate,
+        forgotPassword: settings.forgotPasswordTemplate,
+        requestInvitation: settings.requestInvitationTemplate,
+      },
+    };
+  });
 
 };
 

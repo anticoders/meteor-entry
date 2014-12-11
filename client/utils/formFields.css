@@ -17,13 +17,15 @@
   font-size: 12px;
   color: #666;
   display: inline-block;
-  width: 50px;
+  width: 70px;
   margin-right: 5px;
+  vertical-align: top;
 }
 
 div.anti-entry-field {
   display: inline-block;
-  width: 200px;
+  width: 180px;
+  vertical-align: top;
 }
 
 input[type=text].anti-entry-field,
@@ -71,8 +73,9 @@ input[type=password].anti-entry-field {
 }
 
 .anti-entry-link {
+  font-size: 80%;
   width: 100%;
-  color: #039;
+  color: #359;
   border: none;
   background: none;
   cursor: pointer;

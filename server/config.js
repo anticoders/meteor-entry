@@ -1,10 +1,17 @@
-AntiEntry._config = function(settings) {
+AntiEntry._configServer = function(settings) {
   
-  if(settings.verifyEmail) {
+  if(settings.verifyEmail)
     enableEmailVerification(settings);
-  }
+
+  if(settings.requireUsername)
+    enableRequireUsername(settings);
+
+  if(settings.registrationCode)
+    enableRegistrationCode(settings);
 
 };
+
+
 
 
 var enableEmailVerification = function(settings) {
@@ -43,5 +50,30 @@ var enableEmailVerification = function(settings) {
   };
 
 };
+
+
+
+var enableRequireUsername = function(settings) {
+  Accounts.validateNewUser(function(user) {
+    if (user.username && user.username.length >= 3)
+      return true;
+    throw new Meteor.Error(1025, "Username must have at least 3 characters");
+  });
+};
+
+
+var enableRegistrationCode = function(settings) {
+  Accounts.validateNewUser(function(user) {
+    if (user.profile && user.profile.registrationCode && (user.profile.registrationCode === settings.registrationCode)) {
+      delete user.profile.registrationCode;
+      return true;
+    }
+    throw new Meteor.Error(1026, "Registration code is required");
+  });
+};
+
+
+
+
 
 

@@ -18,10 +18,10 @@ Package.onUse(function (api, where) {
     'templating',
     'ui',
     'underscore',
-    'iron:router@0.9.4'
+    'iron:router@1.0.0'
   ], ['client', 'server']);
 
-  api.use(['anti:modals@0.3.0'], 'client');
+  api.use(['anti:modals@0.4.0'], 'client');
   api.imply(['anti:modals'], 'client');
 
   api.export('AntiEntry', ['client', 'server']);
@@ -66,6 +66,7 @@ Package.onUse(function (api, where) {
 
   api.addFiles([
     'server/config.js',
+    'server/methods.js',
     
   ], 'server');
 

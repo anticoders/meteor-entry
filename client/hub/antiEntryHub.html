@@ -15,10 +15,10 @@
     </div>
 
     <div class="anti-modal-body">
-      {{#if modeIs 'logIn'}} {{> antiEntryHubLogIn}} {{/if}}
-      {{#if modeIs 'signUp'}} {{> antiEntryHubSignUp}} {{/if}}
-      {{#if modeIs 'forgotPassword'}} {{> antiEntryHubForgotPassword}} {{/if}}
-      {{#if modeIs 'requestInvitation'}} {{> antiEntryHubRequestInvitation}} {{/if}}
+      {{#if modeIs 'logIn'}}              {{> UI.dynamic template=antiEntry.template.logIn}} {{/if}}
+      {{#if modeIs 'signUp'}}             {{> UI.dynamic template=antiEntry.template.signUp}} {{/if}}
+      {{#if modeIs 'forgotPassword'}}     {{> UI.dynamic template=antiEntry.template.forgotPassword}} {{/if}}
+      {{#if modeIs 'requestInvitation'}}  {{> UI.dynamic template=antiEntry.template.requestInvitation}} {{/if}}
     </div>
 
   </div>
